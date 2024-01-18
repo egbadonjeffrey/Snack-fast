@@ -1,13 +1,27 @@
-import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const RestaurantItem = ({ restaurant }) => {
-  const { image, name, deliveryFee, minDeliveryTime, maxDeliveryTime, rating } =
-    restaurant && restaurant;
+  const {
+    id,
+    image,
+    name,
+    deliveryFee,
+    minDeliveryTime,
+    maxDeliveryTime,
+    rating,
+  } = restaurant && restaurant;
+
+  const navigation = useNavigation();
+
+  const handleNavigate = () => {
+    console.warn("Navigating to Restaurant");
+    navigation.navigate("Restaurant", { id });
+  };
 
   console.log(restaurant);
   return (
-    <View style={styles.restaurantContainer}>
+    <Pressable style={styles.restaurantContainer} onPress={handleNavigate}>
       <Image
         source={{
           uri: image,
@@ -27,7 +41,7 @@ const RestaurantItem = ({ restaurant }) => {
           <Text> {rating} </Text>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
