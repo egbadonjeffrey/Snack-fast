@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 
 const DishListItem = ({ dish }) => {
-  console.log(dish);
+  //   console.log(dish);
   const { name, image, description, price } = dish && dish;
   return (
     <View style={styles.container}>
