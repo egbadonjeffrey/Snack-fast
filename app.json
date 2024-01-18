@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "18b6b236-2b21-4c4f-93dc-50a36325df76"
+      }
+    },
+    "owner": "thescarlettcoder"
   }
 }
