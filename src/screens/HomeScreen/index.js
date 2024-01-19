@@ -1,8 +1,8 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, FlatList, View } from "react-native";
 import RestaurantItem from "../../components/RestaurantItem";
 import restaurants from "../../../assets/data/restaurants.json";
 
-const HomeScreen = () => {
+export default function HomeScreen() {
   return (
     <View style={styles.page}>
       <FlatList
@@ -12,12 +12,10 @@ const HomeScreen = () => {
       />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   page: {
     padding: 10,
   },
 });
-
-export default HomeScreen;

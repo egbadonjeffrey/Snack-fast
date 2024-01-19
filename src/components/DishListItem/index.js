@@ -1,18 +1,24 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const DishListItem = ({ dish }) => {
-  //   console.log(dish);
-  const { name, image, description, price } = dish && dish;
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
+    <Pressable
+      onPress={() => navigation.navigate("Dish", { id: dish.id })}
+      style={styles.container}
+    >
       <View style={{ flex: 1 }}>
-        <Text style={styles.name}>{name}</Text>
-        <Text style={styles.description}>{description}</Text>
-        <Text style={styles.price}>${price}</Text>
+        <Text style={styles.name}>{dish.name}</Text>
+        <Text style={styles.description} numberOfLines={2}>
+          {dish.description}
+        </Text>
+        <Text style={styles.price}>$ {dish.price}</Text>
       </View>
-
-      {image && <Image source={{ uri: image }} style={styles.image} />}
-    </View>
+      {dish.image && (
+        <Image source={{ uri: dish.image }} style={styles.image} />
+      )}
+    </Pressable>
   );
 };
 
@@ -24,7 +30,6 @@ const styles = StyleSheet.create({
     borderBottomColor: "lightgrey",
     borderBottomWidth: 1,
     flexDirection: "row",
-    alignItems: "center",
   },
   name: {
     fontWeight: "600",

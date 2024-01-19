@@ -15,7 +15,7 @@ const RestaurantItem = ({ restaurant }) => {
   const navigation = useNavigation();
 
   const handleNavigate = () => {
-    console.warn("Navigating to Restaurant");
+    console.warn("Navigating to Restaurant " + id);
     navigation.navigate("Restaurant", { id });
   };
 
