@@ -3,10 +3,10 @@ import styles from "./styles";
 
 const RestaurantHeader = ({ restaurant }) => {
   const { image, name, deliveryFee, minDeliveryTime, maxDeliveryTime } =
-    restaurant && restaurant;
+    restaurant || {};
   return (
     <View style={styles.page}>
-      <Image source={{ uri: restaurant.image }} style={styles.image} />
+      <Image source={{ uri: image }} style={styles.image} resizeMode="cover" />
 
       <View style={styles.container}>
         <Text style={styles.title}>{name}</Text>

@@ -15,13 +15,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.thescarlettcoder.snackfast"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.thescarlettcoder.snackfast"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -31,6 +33,12 @@
         "projectId": "18b6b236-2b21-4c4f-93dc-50a36325df76"
       }
     },
-    "owner": "thescarlettcoder"
+    "owner": "thescarlettcoder",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/18b6b236-2b21-4c4f-93dc-50a36325df76"
+    }
   }
 }

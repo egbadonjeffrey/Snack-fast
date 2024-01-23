@@ -15,11 +15,9 @@ const RestaurantItem = ({ restaurant }) => {
   const navigation = useNavigation();
 
   const handleNavigate = () => {
-    console.warn("Navigating to Restaurant " + id);
     navigation.navigate("Restaurant", { id });
   };
 
-  console.log(restaurant);
   return (
     <Pressable style={styles.restaurantContainer} onPress={handleNavigate}>
       <Image

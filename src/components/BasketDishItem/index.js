@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
 
 const BasketDishItem = ({ basketDish }) => {
-  const { name, price } = basketDish && basketDish;
+  const { name, price } = basketDish || {};
 
   return (
     <View style={styles.row}>

@@ -3,21 +3,25 @@ import { useNavigation } from "@react-navigation/native";
 
 const DishListItem = ({ dish }) => {
   const navigation = useNavigation();
+
+  const { id, image, name, description, price } = dish || {};
+
+  console.log(dish);
+  // console.log(name);
+
   return (
     <Pressable
-      onPress={() => navigation.navigate("Dish", { id: dish.id })}
+      onPress={() => navigation.navigate("Dish", { id })}
       style={styles.container}
     >
       <View style={{ flex: 1 }}>
-        <Text style={styles.name}>{dish.name}</Text>
+        <Text style={styles.name}>{name}</Text>
         <Text style={styles.description} numberOfLines={2}>
-          {dish.description}
+          {description}
         </Text>
-        <Text style={styles.price}>$ {dish.price}</Text>
+        <Text style={styles.price}>$ {price}</Text>
       </View>
-      {dish.image && (
-        <Image source={{ uri: dish.image }} style={styles.image} />
-      )}
+      {image && <Image source={{ uri: image }} style={styles.image} />}
     </Pressable>
   );
 };

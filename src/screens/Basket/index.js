@@ -3,7 +3,7 @@ import BasketDishItem from "../../components/BasketDishItem";
 
 import restaurants from "../../../assets/data/restaurants.json";
 
-const { name, dishes } = restaurants && restaurants[0];
+const { name, dishes } = restaurants[0] || {};
 
 const Basket = () => {
   return (

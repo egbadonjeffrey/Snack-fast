@@ -4,7 +4,10 @@ import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 import restaurants from "../../../assets/data/restaurants.json";
-const dish = restaurants[0].dishes[0];
+
+const {
+  dishes: [dish],
+} = restaurants[0] || {};
 
 const DishDetailsScreen = () => {
   const [quantity, setQuantity] = useState(1);
